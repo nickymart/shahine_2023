@@ -1,4 +1,4 @@
-package homework1;
+package homeworks;
 
 import java.util.Scanner;
 
@@ -34,47 +34,39 @@ public class FigurePainter {
 
     }
 
-    public static void rightangle(int size){
-        for(int i = 0; i < size;i++){
-            for(int j = 0; j < size; j++){
+    public static void rightangle(int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
     }
-    public static void figure_1(int size){
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
-                if(j <= i)
+
+    public static void figure_1(int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (j <= i)
                     System.out.print("* ");
             }
             System.out.println();
         }
     }
-    public static void figure_2(int size){
-        for(int i = 0; i < size; i++){
-            for(int j = size - 1; j >= 0; j--){
-                if(j >= i)
+
+    public static void figure_2(int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = size - 1; j >= 0; j--) {
+                if (j >= i)
                     System.out.print("* ");
             }
             System.out.println();
         }
     }
-    public static void figure_3(int size){
-        for(int i = size - 1; i >= 0; i--){
-            for(int j = 0; j < size; j++){
-                if(j >= i)
-                    System.out.print("* ");
-                else
-                    System.out.print(" ");
-            }
-            System.out.println();
-        }
-    }
-    public static void figure_4(int size){
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
-                if(j >= i)
+
+    public static void figure_3(int size) {
+        for (int i = size - 1; i >= 0; i--) {
+            for (int j = 0; j < size; j++) {
+                if (j >= i)
                     System.out.print("* ");
                 else
                     System.out.print(" ");
@@ -82,7 +74,20 @@ public class FigurePainter {
             System.out.println();
         }
     }
-    public static void figure_5(int size){
+
+    public static void figure_4(int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (j >= i)
+                    System.out.print("* ");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void figure_5(int size) {
         for (int i = 1; i <= size; i++) {
 
             for (int j = size; j >= i; j--) {
