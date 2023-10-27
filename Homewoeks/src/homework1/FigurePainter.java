@@ -14,75 +14,75 @@ public class FigurePainter {
 
         System.out.println();
 
-        triangle_1(size);
+        figure_1(size);
 
         System.out.println();
 
-        triangle_2(size);
+        figure_2(size);
 
         System.out.println();
 
-        triangle_3(size);
+        figure_3(size);
 
         System.out.println();
 
-        triangle_4(size);
+        figure_4(size);
 
         System.out.println();
 
-        triangle_5(size);
+        figure_5(size);
 
     }
 
     public static void rightangle(int size){
         for(int i = 0; i < size;i++){
             for(int j = 0; j < size; j++){
-                System.out.print("*");
+                System.out.print("* ");
             }
             System.out.println();
         }
     }
-    public static void triangle_1(int size){
+    public static void figure_1(int size){
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 if(j <= i)
-                    System.out.print("*");
+                    System.out.print("* ");
             }
             System.out.println();
         }
     }
-    public static void triangle_2(int size){
+    public static void figure_2(int size){
         for(int i = 0; i < size; i++){
             for(int j = size - 1; j >= 0; j--){
                 if(j >= i)
-                    System.out.print("*");
+                    System.out.print("* ");
             }
             System.out.println();
         }
     }
-    public static void triangle_3(int size){
+    public static void figure_3(int size){
         for(int i = size - 1; i >= 0; i--){
             for(int j = 0; j < size; j++){
                 if(j >= i)
-                    System.out.print("*");
+                    System.out.print("* ");
                 else
                     System.out.print(" ");
             }
             System.out.println();
         }
     }
-    public static void triangle_4(int size){
+    public static void figure_4(int size){
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 if(j >= i)
-                    System.out.print("*");
+                    System.out.print("* ");
                 else
                     System.out.print(" ");
             }
             System.out.println();
         }
     }
-    public static void triangle_5(int size){
+    public static void figure_5(int size){
         for (int i = 1; i <= size; i++) {
 
             for (int j = size; j >= i; j--) {
