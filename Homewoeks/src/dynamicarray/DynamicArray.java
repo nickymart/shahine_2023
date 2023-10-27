@@ -1,31 +1,79 @@
-package group1.homework.homework8;
+package dynamicarray;
 
 public class DynamicArray {
 
-    //սա մեր հիմնական մասիվն է, որտեղ պահելու ենք ավելացվող էլեմենտները
     private int[] array = new int[10];
-    //սա մեր մասիվի մեջ ավելացված էլեմենտների քանակն է
     private int size = 0;
 
-    //ստուգել եթե մասիվի մեջ տեղ չկա-> կանչել extend()
-    //և ավելացնենք
+
+    public DynamicArray(int size) {
+        array = new int[size];
+    }
     public void add(int value) {
+        if(size == array.length){
+            extend();
+        }
+        array[size] = value;
+        size++;
     }
-
-    //1․ ստեղծել հին մասիվից 10 էլեմենտ ավելի մեծ մասիվ
-    //2․ քցել հին մասիվի էլեմենտները նորի մեջ
-    //3․ հին մասիվի հղումը կապենք նոր մասիվի հղման հետ։
-    private void extend() {
+    private void extend(){
+        int temp[] = new int[array.length * 2];
+        for (int i = 0; i < array.length; i++)
+        {
+            temp[i] = array[i];
+        }
+        array = temp;
     }
-
-    //եթե տրված ինդեքսը մեր ունեցած մասիվի ինդեքսի սահմաններում է, վերադարձնել
-    // մասիվի index-երրորդ էլեմենտը։ Հակառակ դեպքում վերադարձնել -1։
     public int getByIndex(int index) {
+        if(index >= 0 && index < size){
+            return array[index];
+        }
+        return -1;
+    }
+    public void print() {
+        for (int i = 0; i < size; i++) {
+
+            System.out.print(array[i] + " ");
+        }
+    }
+
+    public void deleteByIndex(int index) {
+        if(index < 0 && index >= size){
+            System.out.println("Element doesn't exist");
+            return;
+        }
+        for (int i = index; i < size - 1; i++)
+        {
+            array[i] = array[i + 1];
+        }
+        array[size - 1] = 0;
+        size--;
+    }
+
+    public void add(int index, int value) {
+        if (size == array.length)
+        {
+            extend();
+        }
+        for (int i = size - 1; i >= index; i--)
+        {
+            array[i + 1] = array[i];
+        }
+        array[index] = value;
+        size++;
+    }
+    public void set(int index, int value) {
+        if(index<0 || index >= size){
+            System.out.println("Element doesn't exist");
+            return;
+        }
+        array[index] = value;
+    }
+    public int getIndexByValue(int value) {
+        for(int i = 0; i < size; i++)
+            if(array[i]  == value)
+                return i;
         return 0;
     }
-
-    //տպել մասիվի ավելացված էլեմենտները
-    public void print() {
-    }
-
 }
+
