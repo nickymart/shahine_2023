@@ -28,6 +28,10 @@ public class FigurePainter {
 
         triangle_4(size);
 
+        System.out.println();
+
+        triangle_5(size);
+
     }
 
     public static void rightangle(int size){
@@ -75,6 +79,33 @@ public class FigurePainter {
                 else
                     System.out.print(" ");
             }
+            System.out.println();
+        }
+    }
+    public static void triangle_5(int size){
+        for (int i = 1; i <= size; i++) {
+
+            for (int j = size; j >= i; j--) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+
+        for (int i = size - 1; i >= 1; i--) {
+
+            for (int j = size; j >= i; j--) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+
             System.out.println();
         }
     }
