@@ -38,6 +38,8 @@ public class DynamicArray {
     }
 
     public void deleteByIndex(int index) {
+        if(size == 0)
+            return;
         if(index < 0 && index >= size){
             System.out.println("Element doesn't exist");
             return;
