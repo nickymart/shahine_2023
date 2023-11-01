@@ -1,7 +1,6 @@
 package employee;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import static employee.EmployeeDemo.input;
 
 public class EmployeeStorage {
     Employee[] employeeStorage;
@@ -24,17 +23,17 @@ public class EmployeeStorage {
         employeeStorage = temp;
     }
 
-    public void search(String ID) {
+    public void searchById(String employeeId) {
         for (int i = 0; i < count; i++) {
-            if (ID.equals(employeeStorage[i].getEmployeeID())) {
-                System.out.println("The employee with the ID " + ID + " exists in the storage!");
+            if (employeeId.equals(employeeStorage[i].getEmployeeID())) {
+                System.out.println("The employee with the ID։" + employeeId + " exists in the storage!");
                 return;
             }
         }
-        System.out.println("The employee with the ID " + ID + " does not exist in the library!");
+        System.out.println("The employee with the ID։" + employeeId + " doesn't exist in the library!");
     }
 
-    public void searchEmployee(String company){
+    public void searchByCompany(String company){
         boolean isExist = false;
         for (int i = 0; i < count; i++) {
             if (company.equals(employeeStorage[i].getCompany())) {
@@ -43,8 +42,39 @@ public class EmployeeStorage {
             }
         }
         if(!isExist){
-            System.out.println("Employee in that company doesn't exist");
+            System.out.println("There isn't employee of that company in the storage.");
         }
+    }
+
+    public void deleteById(String employeeId){
+        if(count == 0)
+            return;
+
+        int index = -1;
+        for (int i = 0; i < count; i++)
+        {
+            if(employeeId.equals(employeeStorage[i].getEmployeeID()))
+                index = i;
+        }
+
+        if(index == -1)
+            return;
+
+        for (int i = index; i < count - 1; i++){
+            employeeStorage[i] = employeeStorage[i + 1];
+        }
+        count--;
+    }
+
+    public void changeById(String employeeId){
+        for (int i = 0; i < count; i++)
+        {
+            if(employeeId.equals(employeeStorage[i].getEmployeeID())) {
+                employeeStorage[i] = input();
+                return;
+            }
+        }
+        System.out.println("There is no employee with the given ID");
     }
 
     public void printAllEmployees(){

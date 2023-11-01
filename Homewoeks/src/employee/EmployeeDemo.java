@@ -9,7 +9,8 @@ public class EmployeeDemo {
         EmployeeStorage employeeStorage = new EmployeeStorage();
         while(true){
             System.out.println("Enter: 0- for exit, 1- for add employee, 2- print all employee," +
-                    " 3- search employee by employee ID, 4- search employee by company name\n");
+                    " 3- search employee by employee ID, 4- search employee by company name, " +
+                    "5- delete employee by ID, 6- change employee by ID\n");
             String step =  new Scanner(System.in).nextLine();
             switch (step){
                 case "0":
@@ -30,6 +31,15 @@ public class EmployeeDemo {
                     String company =  new Scanner(System.in).nextLine();
                     employeeStorage.searchEmployee(company);
                     break;
+                case "5":
+                    System.out.print("Employee Id for delete: ");
+                    String employeeId =  new Scanner(System.in).nextLine();
+                    employeeStorage.deleteById(employeeId);
+                    break;
+                case "6":
+                    System.out.print("Employee Id for change: ");
+                    String changedId =  new Scanner(System.in).nextLine();
+                    employeeStorage.changeById(changedId);
 
             }
 
